@@ -1,5 +1,5 @@
-Mirror Repo for Vito La Manna Fusion Wireless3D node. Copyright remains
-with him.
+Mirror Repo for Vito La Manna Fusion's Wireless3D node. 
+Copyright remains with him.
 
 
 
