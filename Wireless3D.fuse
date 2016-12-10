@@ -1,0 +1,44 @@
+--[[--
+Wireless3D.Fuse
+
+A wireless link for 3D tools.
+Based on Fusion's Wireless fuse.
+--]]--
+
+FuRegisterClass("Wireless3D", CT_Tool, {
+	REGS_Name = "Wireless3D",
+	REGS_Category = "Confusion",
+	REGS_OpIconString = "W3D",
+	REGS_OpDescription = "A wireless link for 3D tools.",
+	REGS_Company = "https://www.facebook.com/vitofusion.com",
+	REGS_URL = "",
+	REG_OpNoMask = true,
+	REG_NoBlendCtrls = true,
+	REG_NoObjMatCtrls = true,
+	REG_NoMotionBlurCtrls = true,
+	REG_NoCommonCtrls = true,
+	REG_Fuse_NoEdit = true,
+	REG_Fuse_NoReload = true,
+	})
+
+
+function Create()
+	InScene = self:AddInput("Scene Input", "SceneInput", {
+		LINKID_DataType = "DataType3D",
+		INPID_InputControl = "ImageControl",
+--		LINK_Main = 1,
+		})
+
+		
+		
+	OutScene = self:AddOutput("3D Data", "Output", {
+		LINKID_DataType = "DataType3D",
+		LINK_Main = 1,
+		})				
+end
+
+function Process(req) 
+	local scene = InScene:GetValue(req)
+	OutScene:Set(req, scene)
+end
+
